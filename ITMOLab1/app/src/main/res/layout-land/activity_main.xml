@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <HorizontalScrollView
+        android:id="@+id/inputTextHorizontalScroll"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="end"
+        android:gravity="end"
+        android:layoutDirection="rtl"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- КОСТЫЛИ НАШЕ ВСЕ -->
+        <TextView
+            android:id="@+id/inputText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:gravity="bottom|end"
+            android:textColor="?attr/textPrimary"
+            android:textDirection="ltr"
+            android:textIsSelectable="true"
+            android:textSize="45sp"
+            android:textAlignment="viewEnd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="754*4/5" />
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/answerText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:maxLines="1"
+        android:textSize="35sp"
+        android:textAlignment="viewEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputTextHorizontalScroll"
+        tools:text="603,2" />
+
+    <GridLayout
+        android:id="@+id/buttonsGrid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/backgroundPrimaryVariant"
+        android:columnCount="7"
+        android:rowCount="5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/answerText">
+
+        <Button
+            android:id="@+id/buttonBracketLeft"
+            style="@style/ButtonOperatorAdded"
+            android:text="("
+            android:tag="("/>
+
+        <Button
+            android:id="@+id/buttonBracketRight"
+            style="@style/ButtonOperatorAdded"
+            android:text=")"
+            android:tag=")"/>
+
+        <Button
+            android:id="@+id/buttonDivideOn"
+            style="@style/ButtonOperatorAdded"
+            android:text="1/x"
+            android:tag="^(-1)"/>
+
+        <Button
+            android:id="@+id/buttonDeleteAll"
+            style="@style/ButtonOperator"
+            android:text="C"
+            />
+
+        <Button
+            android:id="@+id/buttonDivide"
+            style="@style/ButtonOperator"
+            android:text="\u00F7"
+            android:tag="/"/>
+
+        <Button
+            android:id="@+id/buttonMultiply"
+            style="@style/ButtonOperator"
+            android:text="*"
+            android:tag="*" />
+
+        <Button
+            android:id="@+id/buttonDelete"
+            style="@style/ButtonOperatorIcon"
+            app:icon="@drawable/backspace"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/buttonSquared"
+            style="@style/ButtonOperatorAddedIcon"
+            app:icon="@drawable/squared"
+            android:tag="^2"/>
+
+        <Button
+            android:id="@+id/buttonPower"
+            style="@style/ButtonOperatorAddedIcon"
+            app:icon="@drawable/power"
+            android:tag="^("/>
+
+        <Button
+            android:id="@+id/buttonFactorial"
+            style="@style/ButtonOperatorAdded"
+            android:text="x!"
+            android:tag="!"/>
+
+        <Button
+            android:id="@+id/button1"
+            style="@style/ButtonNumber"
+            android:text="1"
+            android:tag="1" />
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/ButtonNumber"
+            android:text="2"
+            android:tag="2" />
+
+        <Button
+            android:id="@+id/button3"
+            style="@style/ButtonNumber"
+            android:text="3"
+            android:tag="3" />
+
+        <Button
+            android:id="@+id/buttonPlus"
+            style="@style/ButtonOperator"
+            android:text="+"
+            android:tag="+" />
+
+        <Button
+            android:id="@+id/buttonSquareRoot"
+            style="@style/ButtonOperatorAddedIcon"
+            app:icon="@drawable/square_root"
+            android:tag="sqrt("/>
+
+        <Button
+            android:id="@+id/buttonRoot"
+            style="@style/ButtonOperatorAddedIcon"
+            app:icon="@drawable/root"
+            android:tag="^(1/"/>
+
+        <Button
+            android:id="@+id/buttonConstantPi"
+            style="@style/ButtonOperatorAdded"
+            android:text="\u03C0"
+            android:tag="pi"/>
+
+        <Button
+            android:id="@+id/button4"
+            style="@style/ButtonNumber"
+            android:text="4"
+            android:tag="4" />
+
+        <Button
+            android:id="@+id/button5"
+            style="@style/ButtonNumber"
+            android:text="5"
+            android:tag="5" />
+
+        <Button
+            android:id="@+id/button6"
+            style="@style/ButtonNumber"
+            android:text="6"
+            android:tag="6" />
+
+        <Button
+            android:id="@+id/buttonMinus"
+            style="@style/ButtonOperator"
+            android:text="-"
+            android:tag="-" />
+
+        <Button
+            android:id="@+id/buttonConstantE"
+            style="@style/ButtonOperatorAdded"
+            android:text="e"
+            android:tag="e"/>
+
+        <Button
+            android:id="@+id/buttonLogN"
+            style="@style/ButtonOperatorAdded"
+            android:text="ln"
+            android:tag="log("/>
+
+        <Button
+            android:id="@+id/buttonLog"
+            style="@style/ButtonOperatorAdded"
+            android:text="log2"
+            android:tag="log2("/>
+
+        <Button
+            android:id="@+id/button7"
+            style="@style/ButtonNumber"
+            android:text="7"
+            android:tag="7" />
+
+        <Button
+            android:id="@+id/button8"
+            style="@style/ButtonNumber"
+            android:text="8"
+            android:tag="8" />
+
+        <Button
+            android:id="@+id/button9"
+            style="@style/ButtonNumber"
+            android:text="9"
+            android:tag="9" />
+
+        <Button
+            android:id="@+id/buttonEquals"
+            style="@style/ButtonEquals"
+            android:layout_gravity="fill"
+            android:layout_rowSpan="2"
+            android:text="="
+            android:tag="=" />
+
+        <Button
+            android:id="@+id/buttonSin"
+            style="@style/ButtonOperatorAdded"
+            android:text="sin"
+            android:tag="sin("/>
+
+        <Button
+            android:id="@+id/buttonCos"
+            style="@style/ButtonOperatorAdded"
+            android:text="cos"
+            android:tag="cos("/>
+
+        <Button
+            android:id="@+id/buttonTan"
+            style="@style/ButtonOperatorAdded"
+            android:text="tan"
+            android:tag="tan("/>
+
+        <Button
+            android:id="@+id/button00"
+            style="@style/ButtonNumber"
+            android:text="00"
+            android:tag="00" />
+
+        <Button
+            android:id="@+id/button0"
+            style="@style/ButtonNumber"
+            android:text="0"
+            android:tag="0" />
+
+        <Button
+            android:id="@+id/buttonDot"
+            style="@style/ButtonNumber"
+            android:text=","
+            android:tag="." />
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

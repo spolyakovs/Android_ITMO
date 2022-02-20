@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <HorizontalScrollView
+        android:id="@+id/inputTextHorizontalScroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layoutDirection="rtl"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- КОСТЫЛИ НАШЕ ВСЕ -->
+        <TextView
+            android:id="@+id/inputText"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="bottom|end"
+            android:textColor="?attr/textPrimary"
+            android:textDirection="ltr"
+            android:textIsSelectable="true"
+            android:textSize="60sp"
+            android:textAlignment="viewEnd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="754*4/511" />
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/answerText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:maxLines="1"
+        android:textAlignment="viewEnd"
+        android:textSize="48sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputTextHorizontalScroll"
+        tools:text="603,2239" />
+
+    <GridLayout
+        android:id="@+id/buttonsGrid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/backgroundPrimaryVariant"
+        android:columnCount="4"
+        android:rowCount="5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/answerText">
+
+
+        <Button
+            android:id="@+id/buttonDeleteAll"
+            style="@style/ButtonOperator"
+            android:layout_column="0"
+            android:text="C" />
+
+        <Button
+            android:id="@+id/buttonDivide"
+            style="@style/ButtonOperator"
+            android:tag="/"
+            android:text="\u00F7" />
+
+        <Button
+            android:id="@+id/buttonMultiply"
+            style="@style/ButtonOperator"
+            android:tag="*"
+            android:text="*" />
+
+        <Button
+            android:id="@+id/buttonDelete"
+            style="@style/ButtonOperatorIcon"
+            app:icon="@drawable/backspace"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/button1"
+            style="@style/ButtonNumber"
+            android:layout_column="0"
+            android:tag="1"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/ButtonNumber"
+            android:tag="2"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/button3"
+            style="@style/ButtonNumber"
+            android:tag="3"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/buttonPlus"
+            style="@style/ButtonOperator"
+            android:tag="+"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/button4"
+            style="@style/ButtonNumber"
+            android:layout_column="0"
+            android:tag="4"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/button5"
+            style="@style/ButtonNumber"
+            android:tag="5"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/button6"
+            style="@style/ButtonNumber"
+            android:tag="6"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/buttonMinus"
+            style="@style/ButtonOperator"
+            android:tag="-"
+            android:text="-" />
+
+        <Button
+            android:id="@+id/button7"
+            style="@style/ButtonNumber"
+            android:layout_column="0"
+            android:tag="7"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/button8"
+            style="@style/ButtonNumber"
+            android:tag="8"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/button9"
+            style="@style/ButtonNumber"
+            android:tag="9"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/buttonEquals"
+            style="@style/ButtonEquals"
+            android:layout_rowSpan="2"
+            android:layout_gravity="fill"
+            android:tag="="
+            android:text="=" />
+
+        <Button
+            android:id="@+id/button00"
+            style="@style/ButtonNumber"
+            android:layout_column="0"
+            android:tag="00"
+            android:text="00" />
+
+        <Button
+            android:id="@+id/button0"
+            style="@style/ButtonNumber"
+            android:tag="0"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/buttonDot"
+            style="@style/ButtonNumber"
+            android:tag="."
+            android:text="," />
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="backgroundPrimary" format="color" />
+    <attr name="backgroundPrimaryVariant" format="color" />
+    <attr name="backgroundSecondary" format="color" />
+    <attr name="backgroundSecondaryVariant" format="color" />
+    <attr name="textPrimary" format="color" />
+    <attr name="textPrimaryVariant" format="color" />
+    <attr name="textSecondary" format="color" />
+    <attr name="textSecondaryVariant" format="color" />
+</resources>
