@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/services_fragment_nav"
+    app:startDestination="@+id/servicesFragment">
+    <fragment
+        android:id="@+id/servicesFragment"
+        android:name="com.example.itmolab2.services.ServicesFragment"
+        android:label="servicesFragment">
+        <action
+            android:id="@+id/action_servicesFragment_to_servicesOpenedFragment"
+            app:destination="@id/servicesOpenedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/servicesOpenedFragment"
+        android:name="com.example.itmolab2.services.ServicesOpenedFragment"
+        android:label="servicesOpenedFragment">
+        <argument
+            android:name="count"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>

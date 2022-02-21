@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ServicesFragmentView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textServices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Services fragment"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toTopOf="@+id/servicesShowCounterButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/servicesShowCounterButton"
+        style="@style/ButtonMenuFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show counter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textServices"
+        app:layout_constraintBottom_toTopOf="@id/servicesCounterButton" />
+
+    <Button
+        android:id="@+id/servicesCounterButton"
+        style="@style/ButtonMenuFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Counter++"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/servicesShowCounterButton"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

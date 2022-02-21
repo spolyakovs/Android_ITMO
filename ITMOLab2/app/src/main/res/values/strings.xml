@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ITMO Lab2</string>
+    <string name="counter_text">Counter: %1$d</string>
+</resources>
