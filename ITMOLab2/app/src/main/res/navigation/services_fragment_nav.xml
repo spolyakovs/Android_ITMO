@@ -7,17 +7,6 @@
         android:id="@+id/servicesFragment"
         android:name="com.example.itmolab2.services.ServicesFragment"
         android:label="servicesFragment">
-        <action
-            android:id="@+id/action_servicesFragment_to_servicesOpenedFragment"
-            app:destination="@id/servicesOpenedFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/servicesOpenedFragment"
-        android:name="com.example.itmolab2.services.ServicesOpenedFragment"
-        android:label="servicesOpenedFragment">
-        <argument
-            android:name="count"
-            app:argType="integer" />
     </fragment>
 
 </navigation>

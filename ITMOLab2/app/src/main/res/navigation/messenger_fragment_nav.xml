@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/messenger_fragment_nav"
+    app:startDestination="@+id/messengerFragment">
+    <fragment
+        android:id="@+id/messengerFragment"
+        android:name="com.example.itmolab2.messenger.MessengerFragment"
+        android:label="messengerFragment">
+        <action
+            android:id="@+id/action_messengerFragment_to_messengerOpenedFragment"
+            app:destination="@id/messengerOpenedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/messengerOpenedFragment"
+        android:name="com.example.itmolab2.messenger.MessengerOpenedFragment"
+        android:label="messengerOpenedFragment">
+        <argument
+            android:name="count"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>

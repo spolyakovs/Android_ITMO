@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/friends_fragment_nav"
+    app:startDestination="@+id/friendsFragment">
+    <fragment
+        android:id="@+id/friendsFragment"
+        android:name="com.example.itmolab2.friends.FriendsFragment"
+        android:label="friendsFragment">
+        <action
+            android:id="@+id/action_friendsFragment_to_friendsOpenedFragment"
+            app:destination="@id/friendsOpenedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/friendsOpenedFragment"
+        android:name="com.example.itmolab2.friends.FriendsOpenedFragment"
+        android:label="friendsOpenedFragment">
+        <argument
+            android:name="count"
+            app:argType="integer" />
+    </fragment>
+
+</navigation>

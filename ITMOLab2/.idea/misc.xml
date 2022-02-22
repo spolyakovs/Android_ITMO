@@ -5,8 +5,13 @@
       <map>
         <entry key="..\:/ASProjects/Android_ITMO/ITMOLab2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2245" />
         <entry key="..\:/ASProjects/Android_ITMO/ITMOLab2/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/ASProjects/Android_ITMO/ITMOLab2/app/src/main/res/layout/default_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/ASProjects/Android_ITMO/ITMOLab2/app/src/main/res/layout/friends_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/ASProjects/Android_ITMO/ITMOLab2/app/src/main/res/layout/friends_opened_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/ASProjects/Android_ITMO/ITMOLab2/app/src/main/res/layout/home_fragment.xml" value="0.1813186813186813" />
         <entry key="..\:/ASProjects/Android_ITMO/ITMOLab2/app/src/main/res/layout/home_opened_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/ASProjects/Android_ITMO/ITMOLab2/app/src/main/res/layout/messenger_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/ASProjects/Android_ITMO/ITMOLab2/app/src/main/res/layout/messenger_opened_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/ASProjects/Android_ITMO/ITMOLab2/app/src/main/res/layout/services_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/ASProjects/Android_ITMO/ITMOLab2/app/src/main/res/layout/services_opened_fragment.xml" value="0.36666666666666664" />
         <entry key="..\:/ASProjects/Android_ITMO/ITMOLab2/app/src/main/res/menu/bottom_nav.xml" value="0.36666666666666664" />

@@ -8,13 +8,12 @@
         android:id="@+id/services_fragment_nav"
         android:title="Services" />
 
-<!--    <item-->
-<!--        android:id="@+id/messengerFragmentNav"-->
-<!--        android:title="Messenger" />-->
+    <item
+        android:id="@+id/messenger_fragment_nav"
+        android:title="Messenger" />
 
-
-<!--    <item-->
-<!--        android:id="@+id/friendsFragmentNav"-->
-<!--        android:title="Friends" />-->
+    <item
+        android:id="@+id/friends_fragment_nav"
+        android:title="Friends" />
 
 </menu>

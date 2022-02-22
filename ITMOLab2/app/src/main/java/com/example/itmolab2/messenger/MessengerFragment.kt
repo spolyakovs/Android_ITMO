@@ -1,18 +1,17 @@
-package com.example.itmolab2.services
+package com.example.itmolab2.messenger
 
-
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import com.example.itmolab2.MainActivity
-import com.example.itmolab2.databinding.ServicesFragmentBinding
+import androidx.navigation.fragment.findNavController
+import com.example.itmolab2.R
+import com.example.itmolab2.databinding.MessengerFragmentBinding
 
-class ServicesFragment : Fragment() {
-    private var _binding: ServicesFragmentBinding? = null
+class MessengerFragment : Fragment() {
+    private var _binding: MessengerFragmentBinding? = null
     private val binding get() = _binding!!
     private var count = 0
 
@@ -21,18 +20,18 @@ class ServicesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = ServicesFragmentBinding.inflate(inflater, container, false)
+        _binding = MessengerFragmentBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        binding.servicesShowCounterButton.setOnClickListener {
+        binding.messengerShowCounterButton.setOnClickListener {
             val bundle = bundleOf("count" to count)
-            val intent = Intent(this.context, ServicesOpenedActivity::class.java).apply {
-                putExtra("count", count)
-            }
-            startActivity(intent)
+            findNavController().navigate(
+                R.id.action_messengerFragment_to_messengerOpenedFragment,
+                bundle
+            )
         }
 
-        binding.servicesCounterButton.setOnClickListener {
+        binding.messengerCounterButton.setOnClickListener {
             count++
         }
 
