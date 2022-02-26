@@ -1,19 +1,21 @@
 package com.example.itmolab3
 
-import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.transition.TransitionManager
-import androidx.compose.ui.platform.ViewCompositionStrategy
+import android.view.View
+import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.constraintlayout.motion.widget.TransitionAdapter
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import com.example.itmolab3.cards.CurrentCardsModel
 import com.example.itmolab3.cards.CurrentCardsViewModel
 import com.example.itmolab3.databinding.ActivityMainBinding
 import com.example.itmolab3.ui.Buttons
 import com.google.accompanist.appcompattheme.AppCompatTheme
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -22,34 +24,41 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val viewModel = ViewModelProvider(this)
-            .get(CurrentCardsViewModel::class.java)
+        val viewModel: CurrentCardsViewModel by viewModels()
 
         viewModel
             .modelStream
-            .observe(this, Observer {
-                bindCards(it)
-            })
+            .observe(this) {
+                bindTopCard(it)
+                lifecycleScope.launch {
+                    delay(100L)
+                    bindBottomCard(it)
+                }
+            }
 
         binding.root.setTransitionListener(object : TransitionAdapter() {
             override fun onTransitionCompleted(motionLayout: MotionLayout, currentId: Int) {
+                viewModel.swiped()
+
                 when (currentId) {
                     R.id.endLike -> {
+                        Toast.makeText(this@MainActivity, "Liked", Toast.LENGTH_SHORT).show()
                         motionLayout.progress = 0f
                         motionLayout.setTransition(R.id.start, R.id.endLike)
-                        viewModel.swiped()
                     }
                     R.id.endDislike -> {
+                        Toast.makeText(this@MainActivity, "Disliked", Toast.LENGTH_SHORT).show()
                         motionLayout.progress = 0f
                         motionLayout.setTransition(R.id.start, R.id.endDislike)
-                        viewModel.swiped()
                     }
                     R.id.endUp -> {
+                        Toast.makeText(this@MainActivity, "Skipped", Toast.LENGTH_SHORT).show()
                         motionLayout.progress = 0f
                         motionLayout.setTransition(R.id.start, R.id.middleUp)
-                        viewModel.swiped()
                     }
                 }
+
+
             }
         })
 
@@ -70,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         binding.root.transitionToEnd()
     }
 
-    private fun bindCards(model: CurrentCardsModel) {
+    private fun bindTopCard(model: CurrentCardsModel) {
         binding.topCardNameText.text = model.top.name
         binding.topCardAvatar.setImageResource(model.top.avatar_src)
         binding.topCardDescriptionText.text = model.top.description
@@ -84,8 +93,9 @@ class MainActivity : AppCompatActivity() {
                 model.top.expanded = true
             }
         }
+    }
 
-
+    private fun bindBottomCard(model: CurrentCardsModel) {
         binding.bottomCardNameText.text = model.bottom.name
         binding.bottomCardAvatar.setImageResource(model.bottom.avatar_src)
         binding.bottomCardDescriptionText.text = model.bottom.description
