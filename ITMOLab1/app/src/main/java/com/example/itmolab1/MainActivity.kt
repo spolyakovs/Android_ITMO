@@ -56,6 +56,8 @@ class MainActivity : AppCompatActivity() {
             }
         } catch (e: IllegalArgumentException) {
             ""
+        } catch (e: ArithmeticException) {
+            "Ошибка"
         }
     }
 
