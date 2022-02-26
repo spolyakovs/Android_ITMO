@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/endLike"
+        motion:constraintSetStart="@id/start"
+        motion:duration="500"
+        motion:motionInterpolator="linear">
+       <KeyFrameSet>
+           <KeyAttribute
+               motion:motionTarget="@+id/topCard"
+               motion:framePosition="50"
+               android:rotation="0" />
+       </KeyFrameSet>
+        <OnSwipe motion:dragDirection="dragRight" />
+    </Transition>
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/endDislike" >
+        <OnSwipe motion:dragDirection="dragLeft" />
+        <KeyFrameSet >
+            <KeyAttribute
+                motion:motionTarget="@+id/topCard"
+                motion:framePosition="50"
+                android:rotation="0" />
+        </KeyFrameSet>
+    </Transition>
+    <Transition
+        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/middleUp" >
+        <OnSwipe motion:dragDirection="dragUp" />
+    </Transition>
+    <Transition
+        motion:constraintSetStart="@+id/middleUp"
+        motion:constraintSetEnd="@+id/endUp" >
+        <OnSwipe motion:dragDirection="dragUp" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/endLike">
+        <Constraint
+            android:id="@+id/topCard"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toTopOf="@+id/bottomBar"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toEndOf="parent"
+            android:rotation="45" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/endDislike">
+        <Constraint
+            android:id="@+id/topCard"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toTopOf="@+id/bottomBar"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintEnd_toStartOf="parent"
+            android:rotation="-45" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/middleUp">
+        <Constraint
+            android:id="@+id/topCard"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toTopOf="@id/bottomBar"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:transitionEasing="linear"
+            android:translationY="-250dp" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/endUp">
+        <Constraint
+            android:id="@+id/topCard"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:transitionEasing="linear" />
+    </ConstraintSet>
+</MotionScene>
