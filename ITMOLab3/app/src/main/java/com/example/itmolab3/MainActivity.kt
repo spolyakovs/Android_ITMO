@@ -14,6 +14,8 @@ import com.example.itmolab3.cards.CurrentCardsViewModel
 import com.example.itmolab3.databinding.ActivityMainBinding
 import com.example.itmolab3.ui.Buttons
 import com.google.accompanist.appcompattheme.AppCompatTheme
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -30,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             .modelStream
             .observe(this) {
                 bindTopCard(it)
-                lifecycleScope.launch {
+                CoroutineScope(Dispatchers.Main).launch {
                     delay(100L)
                     bindBottomCard(it)
                 }
